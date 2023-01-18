@@ -5,5 +5,9 @@ package kotlin_module
  */
 
 fun main() {
-
+    var a : Int = readln().toInt()
+    for (i in 1..5) {
+        println(a)
+        a = a+2*i
+    }
 }
