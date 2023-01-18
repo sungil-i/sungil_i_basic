@@ -7,15 +7,14 @@ import java.util.*
  */
 
 fun main() {
-        fun main() {
-            val sc = Scanner(System.`in`)
-            val rnd = java.util.Random()
-            val rndNum = rnd.nextInt(10) + 1
-            var input = 0
-            do {
-                println("숫자를 입력해주세요")
-                input = sc.nextInt()
-            } while (rndNum == input)
-            println("정답입니다!")
-        }
-    }
+    val sc = Scanner(System.`in`)
+    val rnd = java.util.Random()
+    val rndNum = rnd.nextInt(10) + 1
+    var input = 0
+
+    do {
+        println("숫자를 입력해주세요")
+        input = sc.nextInt()
+    } while (rndNum == input)
+    println("정답입니다!")
+}
