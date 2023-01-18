@@ -5,5 +5,11 @@ package kotlin_module
  */
 
 fun main() {
+    val list = listOf(2,3,5,6,9)
 
+    for (i in list){
+        if (i%2==0){
+            println(i)
+        }
+    }
 }
