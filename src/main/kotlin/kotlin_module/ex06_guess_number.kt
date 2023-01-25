@@ -1,5 +1,7 @@
 package kotlin_module
 
+import java.util.*
+
 /*****
  *  1~100까지 숫자를 랜덤수로 저장한 후,
  *	내가 숫자를 입력하면 더 큰 수인지, 더 작은 수인지 출력해서
@@ -21,5 +23,24 @@ package kotlin_module
  */
 
 fun main() {
+    val rnd = Random()
+    val guess = rnd.nextInt(100) + 1
+    val sc = Scanner(System.`in`)
+    var trial = 1
 
+    while (true) {
+        val msg = ("(" + trial + "번째 시도)"
+                + "랜덤숫자(1~100)는 무엇일까요?")
+        print(msg)
+        val input = sc.nextInt()
+        if (guess == input) {
+            println("정답입니다. " + trial + "번만에 맞추셨어요!")
+            break
+        } else if (guess > input) {
+            println("틀렸습니다. 더 큰 숫자를 입력하세요!")
+        } else if (guess < input) {
+            println("틀렸습니다. 더 작은 숫자를 입력하세요!")
+        }
+        trial++
+    }
 }
