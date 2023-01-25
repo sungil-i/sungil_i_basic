@@ -21,5 +21,17 @@ package kotlin_module
  */
 
 fun main() {
-
+    val rn: Int = Random().nextInt(100) + 1
+    var cnt: Int = 0;
+    while (true) {
+        cnt++;
+        println("$cnt 회 시도중입니다")
+        print("1 부터 100까지의 수 중 랜덤수는 무엇일까요? : ")
+        val In: Int = readLine()!!.toInt()
+        if (In == rn) {
+            println("정답입니다! ${cnt}번 만에 맞추셨네요!")
+            break
+        } else if (In > rn) println("틀렸습니다 더 작은 수를 입력하세요")
+        else println("틀렸습니다 더 큰 수를 입력하세요")
+    }s
 }
