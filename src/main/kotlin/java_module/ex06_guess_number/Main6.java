@@ -1,5 +1,8 @@
 package java_module.ex06_guess_number;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /*****
  *  1~100까지 숫자를 랜덤수로 저장한 후,
  *	내가 숫자를 입력하면 더 큰 수인지, 더 작은 수인지 출력해서
@@ -22,6 +25,25 @@ package java_module.ex06_guess_number;
 
 public class Main6 {
 	public static void main(String[] args) {
+		Random rnd = new Random();
+		Scanner sc = new Scanner(System.in);
 
+		int num = rnd.nextInt(100)+1;
+		int cnt = 1;
+
+		for (int i=0; i<20; i++) {
+			System.out.println("("+cnt+"번째 시도) 랜덤 수는 무엇일까요?");
+			int input = sc.nextInt();
+
+			if (input == num) {
+				System.out.println("정답입니다 "+cnt+"번만에 맞추셨네요");
+				break;
+			} else if (num > input ) {
+				System.out.println("틀렸습니다. 더 큰 수를 입력하세요");
+			} else if(num < input) {
+				System.out.println("틀렸습니다. 더 작은 수를 입력하세요");
+			}
+			cnt++;
+		}
 	}
 }
