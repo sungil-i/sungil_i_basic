@@ -19,7 +19,27 @@ package kotlin_module
  *	> 5
  *	# 정답입니다. 3번만에 맞추셨네요~~!!
  */
-
+import java.util.Random
+import java.util.Scanner
 fun main() {
+    val sc = Scanner(System.`in`)
+    val rnd = Random()
+    val num : Int = rnd.nextInt(100) + 1
+    var trial : Int = 1
+    println(num)
+    while(true) {
+        print("${trial}번째 시도\n")
+        println("랜덤숫자(1~100)는 무엇일까요?")
 
+        var Input: Int = sc.nextInt()
+        if(num == Input) {
+            print("맞았습니다")
+            break
+        } else if(num < Input) {
+            println("랜덤숫자보다 큽니다.")
+        } else {
+            println("랜덤숫자보다 작습니다.")
+        }
+        trial++
+    }
 }
