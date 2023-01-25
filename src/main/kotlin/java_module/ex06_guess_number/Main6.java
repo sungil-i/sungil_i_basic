@@ -19,9 +19,32 @@ package java_module.ex06_guess_number;
  *	> 5
  *	# 정답입니다. 3번만에 맞추셨네요~~!!
  */
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main6 {
 	public static void main(String[] args) {
+		Random rnd = new Random();
+		int guess  = rnd.nextInt(100)+1;
+		Scanner scn = new Scanner(System.in);
 
+		int trial  = 1;
+
+		while (true) {
+			String msg = "(" + trial + "번쨰 시도)"
+					+ "랜덤 숫자 1~100";
+					System.out.print(msg);
+
+					int input = scn.nextInt();
+					if(guess == input) {
+						System.out.println("정답입니다."+trial+"번만에 맞추셨습니다.");
+						break;
+					}else if(guess >input) {
+						System.out.println("틀리셨습니다.");
+					}else if(guess < input) {
+						System.out.println("정답");
+					}
+					trial++;
+		}
 	}
 }

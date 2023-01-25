@@ -19,7 +19,28 @@ package kotlin_module
  *	> 5
  *	# 정답입니다. 3번만에 맞추셨네요~~!!
  */
+import java.util.*
 
 fun main() {
+    val rnd = Random()
+    val guess = rnd.nextInt(100) + 1
+    val scn = Scanner(System.`in`)
 
+    var trial = 1
+
+    while (true) {
+        val msg = ("(" + trial + "번쨰 시도)"
+                + "랜덤 숫자 1~100")
+        print(msg)
+        val input = scn.nextInt()
+        if (guess == input) {
+            println("정답입니다." + trial + "번만에 맞추셨습니다.")
+            break
+        } else if (guess > input) {
+            println("틀리셨습니다.")
+        } else if (guess < input) {
+            println("정답")
+        }
+        trial++
+    }
 }
